@@ -24,8 +24,10 @@ public class SearchRequest implements QueryRequest {
 	private String category;
 	private String location;
 	private String heading;
+	private String price;
 	private String body;
 	private String text;
+	private Boolean image;
 	private String externalID;
 	private Date start;
 	private Date end;
@@ -120,6 +122,14 @@ public class SearchRequest implements QueryRequest {
 	public void setEnd(Date end) {
 		this.end = end;
 	}
+	
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
 	public Map<String, String> getAnnotations() {
 		return annotations;
@@ -149,6 +159,14 @@ public class SearchRequest implements QueryRequest {
 		this.retvals.add(retval);
 	}
 
+	public Boolean getImage() {
+		return image;
+	}
+
+	public void setImage(Boolean image) {
+		this.image = image;
+	}
+
 	public Map<String, String> getQueryParams() {
 		final Map<String, String> queryParams = new HashMap<String, String>();
 
@@ -162,12 +180,16 @@ public class SearchRequest implements QueryRequest {
 			queryParams.put("category", category);
 		if (location != null)
 			queryParams.put("location", location);
+		if (price != null)
+			queryParams.put("price", price);
 		if (heading != null)
 			queryParams.put("heading", heading);
 		if (body != null)
 			queryParams.put("body", body);
 		if (text != null)
-			queryParams.put("text", text);		
+			queryParams.put("text", text);
+		if (image != null)
+			queryParams.put("image", image ? "yes" : "no");
 		if (externalID != null)
 			queryParams.put("externalID", externalID);
 
