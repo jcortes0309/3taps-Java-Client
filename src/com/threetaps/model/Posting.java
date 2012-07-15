@@ -30,6 +30,8 @@ public class Posting {
 	private Date expires;
 	private Date indexed;
 
+	private List<String> images;
+	
 	private List<Map<String, String>> errors;
 	
 	private Map<String, Object> annotations;
@@ -233,4 +235,13 @@ public class Posting {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public List<String> getImages() {
+		return images;
+	}
+
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+
 }
